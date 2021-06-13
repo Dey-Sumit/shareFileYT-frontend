@@ -1,6 +1,8 @@
 import DownloadFile from "@components/DownloadFile";
 import DropZoneComponent from "@components/DropZoneComponent";
 import RenderFile from "@components/RenderFile";
+import EmailForm from "@components/EmailForm";
+
 import axios from "axios";
 import { useState } from "react";
 
@@ -58,10 +60,7 @@ export default function Home() {
 
         {/* upload button */}
         {!downloadPageLink && file && (
-          <button
-            className="p-2 my-5 bg-gray-900 rounded-md w-44 focus:outline-none"
-            onClick={handleUpload}
-          >
+          <button className="button" onClick={handleUpload}>
             {uploadState}
           </button>
         )}
@@ -69,11 +68,8 @@ export default function Home() {
         {downloadPageLink && (
           <div className="p-2 text-center">
             <DownloadFile downloadPageLink={downloadPageLink} />
-            {/* Email Form */}
-            <button
-              className="p-2 my-5 bg-gray-900 rounded-md w-44 focus:outline-none"
-              onClick={resetComponent}
-            >
+            <EmailForm id={id} />
+            <button className="button" onClick={resetComponent}>
               Upload New File
             </button>
           </div>
