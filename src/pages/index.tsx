@@ -38,6 +38,7 @@ export default function Home() {
   const resetComponent = () => {
     setFile(null);
     setDownloadPageLink(null);
+    setUploadState("Upload");
   };
 
   return (

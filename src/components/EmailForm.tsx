@@ -23,7 +23,7 @@ const EmailForm: FunctionComponent<{
 
       setMessage(data.message);
     } catch (error) {
-      setMessage(error.data.response.message);
+      setMessage(error.response.data.message);
     }
   };
 
